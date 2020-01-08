@@ -49,11 +49,11 @@ class LList:
     p.next = None
     return e
 
-  def find(self, pred):
+  def filter(self, pred):
     p = self._head
     while p is not None:
       if pred(p.elem):
-        return p.elem
+        yield p.elem
       p = p.next
   
   def printall(self):
@@ -65,9 +65,23 @@ class LList:
       p = p.next
     print('')
 
+  def for_each(self, proc):
+    p = self._head
+    while p is not None:
+      proc(p.elem)
+      p = p.next
+  
+  def elements(self):
+    p = self._head
+    while p is not None:
+      yield p.elem
+      p = p.next
+
 # 使用链表
 mlist1 = LList()
 for i in range(1, 10):
   mlist1.append(i)
+  mlist1.append(i)
 
-mlist1.printall()
+# mlist1.printall()
+# mlist1.for_each(print)

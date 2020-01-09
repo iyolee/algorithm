@@ -76,12 +76,22 @@ class LList:
     while p is not None:
       yield p.elem
       p = p.next
+  
+  # 反转链表
+  def rev(self):
+    p = None
+    while self._head is not None:
+      q = self._head
+      self._head = q.next # 摘下原来首结点
+      q.next = p
+      p = q
+    self._head = p
 
 # 使用链表
 mlist1 = LList()
 for i in range(1, 10):
   mlist1.append(i)
-  mlist1.append(i)
-
-# mlist1.printall()
 # mlist1.for_each(print)
+
+mlist1.rev()
+mlist1.printall()

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"gotype"
+	"string"
 )
 
 // SliceMode SliceMode
@@ -41,6 +42,7 @@ func LinkedMode() {
 }
 
 func main() {
-	SliceMode()
-	LinkedMode()
+	// SliceMode()
+	// LinkedMode()
+	string.PermutationStr("aaaa")
 }

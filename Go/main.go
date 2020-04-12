@@ -26,7 +26,7 @@ func SliceMode() {
 
 // LinkedMode LinkedMode
 func LinkedMode() {
-	defer func () {
+	defer func() {
 		if err := recover(); err != nil {
 			fmt.Println(err)
 		}
@@ -44,5 +44,7 @@ func LinkedMode() {
 func main() {
 	// SliceMode()
 	// LinkedMode()
-	string.PermutationStr("aaaa")
+	// string.PermutationStr("aaaa")
+	relativePath := string.GetRelativePath("/qihoo/app/a/b/c/d/new.c", "/qihoo/app/1/2/test.c")
+	fmt.Println(relativePath)
 }
